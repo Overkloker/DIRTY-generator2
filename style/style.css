@@ -34,6 +34,8 @@ p {
 }
 h1 {
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 .signature {
   padding-top: 10px;
@@ -126,6 +128,39 @@ h1 {
   background: rgba(35, 142, 88, 0.72);
   margin-top: 30px;
   cursor: pointer;
+}
+h2,
+h3 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.signature-wrapper {
+  padding: 20px 0;
+}
+.signature-wrapper:before,
+.signature-wrapper:after {
+  content: " ";
+  display: table;
+}
+.signature-wrapper:after {
+  clear: both;
+}
+.signature-wrapper .signature-date-left {
+  float: left;
+}
+.signature-wrapper .signature-right {
+  float: right;
+}
+.content h3 {
+  text-transform: uppercase;
+  padding: 30px 0 20px;
+}
+.content .basis {
+  padding: 10px 0;
+}
+.content .basis span {
+  text-transform: uppercase;
 }
 /**
  * Created by Frank on 19.11.2015.
