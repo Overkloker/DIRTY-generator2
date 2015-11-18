@@ -1,0 +1,15 @@
+/**
+ * Created by Frank on 19.11.2015.
+ */
+
+// Mixin itself
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

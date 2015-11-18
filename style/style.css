@@ -35,6 +35,17 @@ p {
 h1 {
   text-align: center;
 }
+.signature {
+  padding-top: 10px;
+}
+.signature:before,
+.signature:after {
+  content: " ";
+  display: table;
+}
+.signature:after {
+  clear: both;
+}
 .signature .date-left {
   float: left;
 }
@@ -47,3 +58,6 @@ h1 {
   text-align: left;
   clear: both;
 }
+/**
+ * Created by Frank on 19.11.2015.
+ */
