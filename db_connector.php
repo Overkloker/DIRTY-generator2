@@ -8,28 +8,26 @@ class DBConnector
     public static $password = 'password';
     public static $dbName = 'generator';
 
-    protected $isConnected = false;
+    protected $mysqli = null;
 
-    protected function connect() {
-        setlocale(LC_ALL, 'ua_UA.UTF-8');
-
-        mysql_connect(self::$hostname, self::$username, self::$password) or die('No connect with data base');
-        mysql_query('SET NAMES utf-8');
-        mysql_select_db(self::$dbName) or die('No data base');
-
-        return true;
-    }
-
-    public function _construct() {
-        if (!$this->isConnected && $this->connect()) {
-            $this->isConnected = true;
+    public function __construct() {
+        if (!$this->mysqli) {
+            $this->mysqli = new mysqli(self::$hostname, self::$username, self::$password, self::$dbName);
+            if (!$this->mysqli) {
+                echo mysqli_connect_error();
+                exit;
+            }
+            $this->mysqli->set_charset("utf8");
         }
     }
 
     public function getUsersData() {
-        $query = "SELECT * FROM articles ORDER BY id_article DESC";
-        $result = mysql_query($query);
+        $result = mysqli_query($this->mysqli, "SELECT * FROM users");
+        $res = [];
+        while($row = mysqli_fetch_assoc($result)){
+            $res[] = $row;
+        }
 
-        var_dump($result);die();
+        return $res;
     }
 }
