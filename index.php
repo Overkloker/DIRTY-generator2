@@ -1,6 +1,10 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
 require 'Names/NCL.NameCase.ua.php';
+require 'db_connector.php';
+
+$connector = new DBConnector();
+$connector->getUsersData();
 
 $vidm = strtolower($_GET['v']);
 $name = $_GET['n'];
