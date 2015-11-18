@@ -1,0 +1,63 @@
+/**
+ * Created by Frank on 18.11.2015.
+ */
+.font {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+}
+body,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+}
+p {
+  line-height: 22px;
+}
+.b-container {
+  width: 912px;
+  margin: 120px auto;
+}
+.turning {
+  float: right;
+  padding-bottom: 80px;
+}
+.content {
+  clear: both;
+}
+h1 {
+  text-align: center;
+}
+.signature {
+  padding-top: 10px;
+}
+.signature:before,
+.signature:after {
+  content: " ";
+  display: table;
+}
+.signature:after {
+  clear: both;
+}
+.signature .date-left {
+  float: left;
+}
+.signature .signature-right {
+  float: right;
+  text-align: right;
+}
+.signature .signature-left {
+  padding: 30px 0;
+  text-align: left;
+  clear: both;
+}
+/**
+ * Created by Frank on 19.11.2015.
+ */
