@@ -4,13 +4,21 @@ require 'db_connector.php';
 require 'helper.php';
 
 $connector = new DBConnector();
-$users = $connector->getUsersData($_GET['user']);
 
-$helper = new Helper($users[0]);
-$nc = new NCLNameCaseUa();
+if (!isset($_GET['user']) && !isset($_GET['document'])) {
+    $users = $connector->getAllUsers();
+    $templates = $connector->getAllTemplates();
+    echo(Helper::renderView('index.php', ['users' => $users, 'templates' => $templates]));
+}
+else {
+    $users = $connector->getUsersData($_GET['user']);
 
-$template = $connector->searchTemplateByName($_GET['document']);
+    $helper = new Helper($users[0]);
+    $nc = new NCLNameCaseUa();
 
-$template_vars = $helper->performVars($connector->getTemplateVars($template));
+    $template = $connector->searchTemplateByName($_GET['document']);
 
-echo ($helper->renderView($_GET['document'].'.php', $template_vars));
+    $template_vars = $helper->performVars($connector->getTemplateVars($template));
+
+    echo(Helper::renderView($_GET['document'] . '.php', $template_vars));
+}

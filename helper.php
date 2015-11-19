@@ -36,7 +36,7 @@ class Helper
         return $res;
     }
 
-    public function renderView($fileName, $vars = array())
+    public static function renderView($fileName, $vars = array())
     {
         foreach ($vars as $k => $v)
         {
