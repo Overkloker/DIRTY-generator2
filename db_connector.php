@@ -42,7 +42,7 @@ class DBConnector
     }
 
     public function getTemplateVars($id) {
-        $result = mysqli_query($this->mysqli, "SELECT tv.`name`, tv.`field`, tv.`vidm` FROM `templates` t
+        $result = mysqli_query($this->mysqli, "SELECT tv.`name`, tv.`field`, tv.`vidm`, tv.`is_short` FROM `templates` t
         LEFT JOIN `template_vars` tv ON t.`id` = tv.`id_template`
         WHERE t.`id` = " . $id);
         $res = [];

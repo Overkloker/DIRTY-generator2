@@ -19,7 +19,7 @@ class Helper
         $this->userData = $userData;
     }
 
-    public function getUserField($field, $vidm = null) {
+    public function getUserField($field, $vidm = null, $is_short = null) {
         $nc = new NCLNameCaseUa();
 
         if ($vidm != null && trim ($vidm) != '') {
@@ -33,6 +33,19 @@ class Helper
         else {
             $res = $this->userData[$field];
         }
+        if ($is_short != null && trim ($is_short) != '') {
+            $res = explode(' ', $res);
+            if (count($res) > 1) {
+                for ($i = 1; $i < count($res); $i++) {
+                    $res[$i] = substr($res[$i], 0, 2) . '.';
+                }
+                $res = implode(' ', $res);
+            }
+            else {
+                $res = substr($res[0], 0, 2) . '.';
+            }
+        }
+
         return $res;
     }
 
@@ -51,7 +64,7 @@ class Helper
     public function performVars($vars) {
         $res = [];
         foreach ($vars as $v) {
-            $res[$v['name']] = $this->getUserField($v['field'], $v['vidm']);
+            $res[$v['name']] = $this->getUserField($v['field'], $v['vidm'], $v['is_short']);
         }
 
         return $res;
