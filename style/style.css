@@ -76,7 +76,7 @@ h1 {
 }
 .select option[disabled] {
   background-color: rgba(46, 53, 44, 0.82);
-  color: #B7AFAF;
+  color: #b7afaf;
 }
 .selector-user {
   border: none;
@@ -94,7 +94,7 @@ h1 {
 }
 .selector-user option[disabled] {
   background-color: rgba(46, 53, 44, 0.82);
-  color: #B7AFAF;
+  color: #b7afaf;
 }
 .selector-document {
   border: none;
@@ -115,7 +115,7 @@ h1 {
 }
 .selector-document option[disabled] {
   background-color: rgba(46, 53, 44, 0.82);
-  color: #B7AFAF;
+  color: #b7afaf;
 }
 .button-submit-select {
   border: none;
@@ -123,7 +123,7 @@ h1 {
   line-height: 60px;
   border-radius: 5px;
   font-size: 30px;
-  color: #F5F5F5;
+  color: #f5f5f5;
   font-weight: bold;
   background: rgba(35, 142, 88, 0.72);
   margin-top: 30px;
