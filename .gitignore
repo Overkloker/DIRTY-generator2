@@ -2,3 +2,5 @@
 /.gitignore
 .idea
 .idea/workspace.xml
+style/mixin.css
+style/style.css
