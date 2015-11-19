@@ -59,4 +59,14 @@ class DBConnector
 
         return $row['id'];
     }
+
+    public function getAllTemplates() {
+        $result = mysqli_query($this->mysqli, "SELECT * FROM `templates`");
+        $res = [];
+        while($row = mysqli_fetch_assoc($result)){
+            $res[] = $row;
+        }
+
+        return $res;
+    }
 }
